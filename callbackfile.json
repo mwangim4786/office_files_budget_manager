@@ -1,0 +1,187 @@
+{
+    "Result": {
+        "ResultType": 0,
+        "ResultCode": 0,
+        "ResultDesc": "The service request is processed successfully.",
+        "OriginatorConversationID": "8c39-4e24-ba78-a464bfcb7db6362806",
+        "ConversationID": "AG_20241101_201005ea42addab0edb9",
+        "TransactionID": "SK132P3PVR",
+        "ResultParameters": {
+            "ResultParameter": [
+                {
+                    "Key": "Currency",
+                    "Value": "KES"
+                },
+                {
+                    "Key": "ReceiverPartyPublicName",
+                    "Value": "000000 - agg"
+                },
+                {
+                    "Key": "DebitPartyCharges",
+                    "Value": "Business PayBill Charge by DebitParty|KES|8.00"
+                },
+                {
+                    "Key": "TransCompletedTime",
+                    "Value": 20241101191138
+                },
+                {
+                    "Key": "DebitPartyAffectedAccountBalance",
+                    "Value": "Working Account|KES|1274629.00|1274629.00|0.00|0.00"
+                },
+                {
+                    "Key": "Amount",
+                    "Value": 200.0
+                },
+                {
+                    "Key": "DebitAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=127462900, BasicAmount=1274629.00}}"
+                },
+                {
+                    "Key": "InitiatorAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=127462900, BasicAmount=1274629.00}}"
+                }
+            ]
+        },
+        "ReferenceData": {
+            "ReferenceItem": [
+                {
+                    "Key": "BillReferenceNumber",
+                    "Value": 353353
+                },
+                {
+                    "Key": "QueueTimeoutURL",
+                    "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"
+                },
+                {
+                    "Key": "Occassion"
+                }
+            ]
+        }
+    }
+}
+
+
+
+{
+    "Result": {
+        "ResultType": 0,
+        "ResultCode": 0,
+        "ResultDesc": "The service request is processed successfully.",
+        "OriginatorConversationID": "9b85-4b30-ba72-7f3656486f92290985",
+        "ConversationID": "AG_20241101_201036efe291f9296d82",
+        "TransactionID": "SK142P3PW2",
+        "ResultParameters": {
+            "ResultParameter": [
+                {
+                    "Key": "Currency",
+                    "Value": "KES"
+                },
+                {
+                    "Key": "ReceiverPartyPublicName",
+                    "Value": "000000 - agg"
+                },
+                {
+                    "Key": "DebitPartyCharges",
+                    "Value": "Business PayBill Charge by DebitParty|KES|8.00"
+                },
+                {
+                    "Key": "TransCompletedTime",
+                    "Value": 20241101191436
+                },
+                {
+                    "Key": "DebitPartyAffectedAccountBalance",
+                    "Value": "Working Account|KES|1274421.00|1274421.00|0.00|0.00"
+                },
+                {
+                    "Key": "Amount",
+                    "Value": 200.0
+                },
+                {
+                    "Key": "DebitAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=127442100, BasicAmount=1274421.00}}"
+                },
+                {
+                    "Key": "InitiatorAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=127442100, BasicAmount=1274421.00}}"
+                }
+            ]
+        },
+        "ReferenceData": {
+            "ReferenceItem": [
+                {
+                    "Key": "BillReferenceNumber",
+                    "Value": 353353
+                },
+                {
+                    "Key": "QueueTimeoutURL",
+                    "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"
+                },
+                {
+                    "Key": "Occassion"
+                }
+            ]
+        }
+    }
+}
+
+{
+    "Result": {
+        "ResultType": 0,
+        "ResultCode": 0,
+        "ResultDesc": "The service request is processed successfully.",
+        "OriginatorConversationID": "3124-481d-b706-10bdd6fbc8e21583945",
+        "ConversationID": "AG_20241101_201079312fc00771ac80",
+        "TransactionID": "SK142P3PWM",
+        "ResultParameters": {
+            "ResultParameter": [
+                {
+                    "Key": "Currency",
+                    "Value": "KES"
+                },
+                {
+                    "Key": "ReceiverPartyPublicName",
+                    "Value": "000000 - agg"
+                },
+                {
+                    "Key": "DebitPartyCharges",
+                    "Value": "Business PayBill Charge by DebitParty|KES|68.00"
+                },
+                {
+                    "Key": "TransCompletedTime",
+                    "Value": 20241101192431
+                },
+                {
+                    "Key": "DebitPartyAffectedAccountBalance",
+                    "Value": "Working Account|KES|1254353.00|1254353.00|0.00|0.00"
+                },
+                {
+                    "Key": "Amount",
+                    "Value": 20000.0
+                },
+                {
+                    "Key": "DebitAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125435300, BasicAmount=1254353.00}}"
+                },
+                {
+                    "Key": "InitiatorAccountCurrentBalance",
+                    "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125435300, BasicAmount=1254353.00}}"
+                }
+            ]
+        },
+        "ReferenceData": {
+            "ReferenceItem": [
+                {
+                    "Key": "BillReferenceNumber",
+                    "Value": 353353
+                },
+                {
+                    "Key": "QueueTimeoutURL",
+                    "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"
+                },
+                {
+                    "Key": "Occassion"
+                }
+            ]
+        }
+    }
+}{"Result": {"ResultType": 0, "ResultCode": 0, "ResultDesc": "The service request is processed successfully.", "OriginatorConversationID": "3124-481d-b706-10bdd6fbc8e21584142", "ConversationID": "AG_20241101_20107419040dac634e2e", "TransactionID": "SK172P3PXJ", "ResultParameters": {"ResultParameter": [{"Key": "Currency", "Value": "KES"}, {"Key": "ReceiverPartyPublicName", "Value": "000000 - agg"}, {"Key": "DebitPartyCharges", "Value": "Business PayBill Charge by DebitParty|KES|8.00"}, {"Key": "TransCompletedTime", "Value": 20241101194701}, {"Key": "DebitPartyAffectedAccountBalance", "Value": "Working Account|KES|1253845.00|1253845.00|0.00|0.00"}, {"Key": "Amount", "Value": 500.0}, {"Key": "DebitAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125384500, BasicAmount=1253845.00}}"}, {"Key": "InitiatorAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125384500, BasicAmount=1253845.00}}"}]}, "ReferenceData": {"ReferenceItem": [{"Key": "BillReferenceNumber", "Value": 353353}, {"Key": "QueueTimeoutURL", "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"}, {"Key": "Occassion"}]}}}{"Result": {"ResultType": 0, "ResultCode": 0, "ResultDesc": "The service request is processed successfully.", "OriginatorConversationID": "9b85-4b30-ba72-7f3656486f92291304", "ConversationID": "AG_20241101_20102c15296a73ce2154", "TransactionID": "SK142P3PXQ", "ResultParameters": {"ResultParameter": [{"Key": "Currency", "Value": "KES"}, {"Key": "ReceiverPartyPublicName", "Value": "000000 - agg"}, {"Key": "DebitPartyCharges", "Value": "Business PayBill Charge by DebitParty|KES|3.00"}, {"Key": "TransCompletedTime", "Value": 20241101195144}, {"Key": "DebitPartyAffectedAccountBalance", "Value": "Working Account|KES|1253762.00|1253762.00|0.00|0.00"}, {"Key": "Amount", "Value": 80.0}, {"Key": "DebitAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125376200, BasicAmount=1253762.00}}"}, {"Key": "InitiatorAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125376200, BasicAmount=1253762.00}}"}]}, "ReferenceData": {"ReferenceItem": [{"Key": "BillReferenceNumber", "Value": 353353}, {"Key": "QueueTimeoutURL", "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"}, {"Key": "Occassion"}]}}}{"Result": {"ResultType": 0, "ResultCode": 0, "ResultDesc": "The service request is processed successfully.", "OriginatorConversationID": "94fc-460e-a970-797968bf6a851037892", "ConversationID": "AG_20241101_201012738c7642fbeb45", "TransactionID": "SK182P3PYE", "ResultParameters": {"ResultParameter": [{"Key": "Currency", "Value": "KES"}, {"Key": "ReceiverPartyPublicName", "Value": "000000 - agg"}, {"Key": "DebitPartyCharges", "Value": "Business PayBill Charge by DebitParty|KES|13.00"}, {"Key": "TransCompletedTime", "Value": 20241101200145}, {"Key": "DebitPartyAffectedAccountBalance", "Value": "Working Account|KES|1252749.00|1252749.00|0.00|0.00"}, {"Key": "Amount", "Value": 1000.0}, {"Key": "DebitAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125274900, BasicAmount=1252749.00}}"}, {"Key": "InitiatorAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125274900, BasicAmount=1252749.00}}"}]}, "ReferenceData": {"ReferenceItem": [{"Key": "BillReferenceNumber", "Value": 353353}, {"Key": "QueueTimeoutURL", "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"}, {"Key": "Occassion"}]}}}{"Result": {"ResultType": 0, "ResultCode": 0, "ResultDesc": "The service request is processed successfully.", "OriginatorConversationID": "8c39-4e24-ba78-a464bfcb7db6363554", "ConversationID": "AG_20241101_2010288f055488fa917f", "TransactionID": "SK192P3PYP", "ResultParameters": {"ResultParameter": [{"Key": "Currency", "Value": "KES"}, {"Key": "ReceiverPartyPublicName", "Value": "000000 - agg"}, {"Key": "DebitPartyCharges", "Value": "Business PayBill Charge by DebitParty|KES|3.00"}, {"Key": "TransCompletedTime", "Value": 20241101200557}, {"Key": "DebitPartyAffectedAccountBalance", "Value": "Working Account|KES|1252696.00|1252696.00|0.00|0.00"}, {"Key": "Amount", "Value": 50.0}, {"Key": "DebitAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125269600, BasicAmount=1252696.00}}"}, {"Key": "InitiatorAccountCurrentBalance", "Value": "{Amount={CurrencyCode=KES, MinimumAmount=125269600, BasicAmount=1252696.00}}"}]}, "ReferenceData": {"ReferenceItem": [{"Key": "BillReferenceNumber", "Value": 353353}, {"Key": "QueueTimeoutURL", "Value": "https://internalsandbox.safaricom.co.ke/mpesa/b2bresults/v1/submit"}, {"Key": "Occassion"}]}}}

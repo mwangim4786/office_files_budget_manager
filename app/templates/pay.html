@@ -48,7 +48,7 @@
                 <div class="modal-footer">
                     <div class="form-group row">
                         <div class="col-sm-9">  
-                            <form action="{{ url_for('confirm_payment', merchant_req_id=resp_details.ConversationID) }}" method="post">
+                            <form action="{{ url_for('payments.confirm_payment', merchant_req_id=resp_details.ConversationID) }}" method="post">
                                 <input class="btn btn-outline-success btn-sm mt-3 pb-0" type="submit" value="Confirm Payment">
                             </form>
                         </div>

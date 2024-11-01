@@ -5,8 +5,14 @@ from app import db, bcrypt
 from app.views.payment.forms import PayForm
 from app.models.budget import Budget
 from app.models.files import Files
+from app.models.transactions import Transaction
 from datetime import datetime
 from flask_login import login_user, current_user, logout_user, login_required
+import uuid
+import base64
+import json
+import requests
+import time
 
 payments = Blueprint('payments', __name__)
 
@@ -48,7 +54,7 @@ def payment_request():
         partyB = form.paybill.data
         file = str(form.file_no.data)
         budgetId = form.budget_no.data
-        print(budgetId)
+        print("Budget ID", budgetId)
 
         # -----------------------------------------------------------------------------
         budget = Budget.query.get_or_404(budgetId)
@@ -70,7 +76,7 @@ def payment_request():
         initiator_pass = "Safaricom999!*!"
         public_key = "-----BEGIN CERTIFICATE-----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-----END CERTIFICATE-----"
         # security_credential = base64.b64encode((initiator_pass + public_key).encode('utf-8')).decode()
-        securityCredential = "ZdWTIszTXMkF07d8tPQKxwLYSqBhWODLzu66+m5uXBgdg8mGmUQRVjjdo16KqRKKpwl5SLzjTzyLBKncYHew2iuSZzBeBzG4k7U7g8SO+ThizuM7UvFSHTj0AchQqBRppcFcYFnIo8t+QmfNfnqbsYGnT/nd0biR7Cn1G8w1UE7kTYBsY5TkB4WzmleByvyzGMpiz9UQHGIv9q3yrKmdH3+Akw80u8ibMriN1iyQFORILZvpA7pfsjr0VIC9sV0hFh632fuskT4biklhn4CbOCmpAkfCe90mf2GEUCsQBjLJ1WR1ewFuLPiJvxPEsywv5Kr9q8vRmlEMoQXDcaqhEw=="
+        securityCredential = "iHLtrZv1fsMWmYQ11FSmcYTKvUjkIJkv9IRWD6TS175TI594JSS+E0nhXx6GXd02Duf8XPayzvhJ+Gv1kZq+QVTqJmQJVCn0uD3C28GuHEK1FEsQmSK8BZHZGveXSln/VYWIp2kG0wfIQr8Zq9CnE+OBYLBvcfGHKCe4nqN13S6ZGCFT8G1yjY5j4rjhqNXLdoLj1o7XUYsV3EO84w88NS2O91NDXfIJfsyP2vNEWrLGGkVZaImNGMXENNOMLQ8zkrjaUL53HijG8mLUPT7U8EPmfJX+Z8ANBDWLUJOeNPqoHpwCDLKA3Ay5SZBFfDmuOeFeV75bc6y6diAHnb+Zjw=="
 
         url = 'https://sandbox.safaricom.co.ke/mpesa/b2b/v1/paymentrequest'
         headers = {
@@ -89,8 +95,8 @@ def payment_request():
             "AccountReference": "353353",
             "Requester": "254700000000",
             "Remarks": "OK",
-            "QueueTimeOutURL": "https://budgetfiles.onrender.com/callback",
-            "ResultURL": "https://budgetfiles.onrender.com/callback"
+            "QueueTimeOutURL": "https://72fc-2c0f-fe38-2403-45b0-68c9-6249-aa33-9b1f.ngrok-free.app/callback",
+            "ResultURL": "https://72fc-2c0f-fe38-2403-45b0-68c9-6249-aa33-9b1f.ngrok-free.app/callback"
         }
 
         try:
@@ -101,7 +107,7 @@ def payment_request():
                 budgetzId = budgetId
                 descriptionZ = narration
                 uzer_id = current_user.id
-                print(filezNo)
+                print("Filez num", filezNo)
                 # return response
                 data = dict()
                 data['amount'] = amount
@@ -124,7 +130,7 @@ def payment_request():
 def handle_callback():
 
     fileNo = session.get("fileId", None)
-    print(fileNo)
+    print("file number", fileNo)
 
     json_repsonse = request.get_json()
     result = json_repsonse["Result"]
@@ -151,6 +157,8 @@ def handle_callback():
         budget = budgetzId
         file = filezNo
         narration = descriptionZ
+
+        print(budget, file, narration)
 
         trans = Transaction(transaction_id=transaction_id, mpesa_ref=mpesa_ref, merchant_req_id=merchant_req_id, trans_date=trans_date, status=status, amount=amount, user_id=user_id, budget=budget, file=file, narration=narration)
         db.session.add(trans)
@@ -183,9 +191,11 @@ def confirm_payment(merchant_req_id):
             fileNo = session.get("fileId", None)
             description = session.get("descr", None)
             payment.user_id = current_user.id
-            payment.budget = budget
-            payment.file = fileNo
-            payment.narration = description
+            # payment.budget = budget
+            # payment.file = fileNo
+            # payment.narration = description
+
+            # print(budget, fileNo, description)
             
             db.session.commit()
             if payment.status == '0':
