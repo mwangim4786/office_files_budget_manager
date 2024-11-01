@@ -109,7 +109,7 @@ def login():
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
             flash(f'You have been logged in!', 'success')
-            return redirect(next_page) if next_page else redirect(url_for('users.home'))
+            return redirect(next_page) if next_page else redirect(url_for('users.account', user_id=user.id))
             # return redirect(url_for('home'))
         else:
             flash(f'Login Unsuccesseful. Check your details!', 'danger')

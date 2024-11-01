@@ -51,9 +51,9 @@
         {% endif %}
 
         {% if page == 'account' %}
-            <a class="active" href="{{ url_for('users.account', user_id=current_user.id) }}">Accounts</a>
+            <a class="active" href="{{ url_for('users.account', user_id=current_user.id) }}">Account</a>
         {% else %}
-            <a href="{{ url_for('users.account', user_id=current_user.id) }}">Accounts</a>
+            <a href="{{ url_for('users.account', user_id=current_user.id) }}">Account</a>
         {% endif %}
 
     {% else %}

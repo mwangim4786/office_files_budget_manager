@@ -130,7 +130,7 @@ def payment_request():
 def handle_callback():
 
     fileNo = session.get("fileId", None)
-    print("file number", fileNo)
+    # print("file number", fileNo)
 
     json_repsonse = request.get_json()
     result = json_repsonse["Result"]
