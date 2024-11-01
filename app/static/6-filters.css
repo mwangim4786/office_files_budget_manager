@@ -1,0 +1,50 @@
+.filters {
+	/* display: block;
+	background-color: #FFFFFF;
+	height: 48px;
+	width: 100%;
+	border: 1px solid #DDDDDD;
+	border-radius: 4px;
+	margin-top: 10px; */
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: #f1f1f1;
+	position: absolute;
+	height: 1000px;
+	overflow: auto;
+}
+
+.filters a {
+	display: block;
+	color: black;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.filters a.active {
+	background-color: #055041;
+	color: white;
+}
+
+.filters a:hover:not(.active) {
+	background-color: #555;
+	color: white;
+}
+
+div.content {
+	margin: 5px 5px 5px 205px;
+	padding: 1px 1px;
+	height: 943px;
+	border: 1px solid #aca4a4;
+	border-radius: 2px;
+}
+
+button:hover {
+	opacity: 90%;
+}
+
+
+#exampleModalCenter {
+	backdrop-filter: blur(2px);
+  }

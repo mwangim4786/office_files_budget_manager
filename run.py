@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from budget_files import app
+from app import app
 
 
 
