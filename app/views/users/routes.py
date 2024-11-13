@@ -4,6 +4,9 @@ from flask import render_template, request, url_for, flash, redirect, abort, ses
 from app import app, db, bcrypt
 from app.views.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from app.models.users import Users
+from app.models.files import Files
+from app.models.budget import Budget
+from app.models.transactions import Transaction
 from datetime import datetime
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -22,7 +25,21 @@ def allUsers(): # ************************* users *************************
 @users.route('/home')
 @login_required
 def home():
-    return render_template('home.html', page='home',)
+    users_count = Users.query.count()
+    files_count = Files.query.count()
+    
+    budget_count = Budget.query.filter(Budget.user_id == current_user.id).count()
+
+    transactions = 0
+    trans_title = ''
+    if current_user.role == 'Admin':
+        transactions = Transaction.query.count()
+        trans_title = 'Transactions'
+    else:
+        transactions = Transaction.query.filter_by(user_id=current_user.id).count()
+        trans_title = 'My Transactions'
+    
+    return render_template('home.html', page='home', user_count=users_count, files_count=files_count, budget_count=budget_count, transactions=transactions, trans_title=trans_title)
 
 # ************************************* Home *************************************
 
@@ -109,7 +126,7 @@ def login():
             login_user(user, remember=form.remember.data)
             next_page = request.args.get('next')
             flash(f'You have been logged in!', 'success')
-            return redirect(next_page) if next_page else redirect(url_for('users.account', user_id=user.id))
+            return redirect(next_page) if next_page else redirect(url_for('users.home'))
             # return redirect(url_for('home'))
         else:
             flash(f'Login Unsuccesseful. Check your details!', 'danger')

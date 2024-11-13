@@ -5,6 +5,7 @@
 
 
 from flask import Flask
+from flask_font_awesome import FontAwesome
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -17,6 +18,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lite_storage.db'
 
 
 db = SQLAlchemy(app)
+fa = FontAwesome(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app) # handles sessions
 login_manager.login_view = 'login' # login view - function name for the route login

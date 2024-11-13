@@ -10,13 +10,64 @@
         <h1>Home</h1>
 
         
-                
-        <!-- Delete all records in transactions table. -->
-        <div style="overflow: hidden; float: right;">
-            <a href="{{ url_for('users.home') }}" style="text-decoration: none;"><button type="button" class="btn btn-outline-info mt-3 pb-0">del</button></a>
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body bg-warning">
+                    <h5 class="card-title">{{ font_awesome.render_icon("fas fa-users fa-4x") }}</h5>
+                    <p class="card-text">No. os users: {{ user_count }} </p>
+                    <hr style="height: 1px; background: #484848;">
+                    {% if current_user.role == 'Admin' %}
+                      <a class="text-dark" href="{{ url_for('users.allUsers') }}">Users <span class="fas fa-arrow-circle-right"></span></a>
+                    {% else %}
+                      <a class="text-secondary" href="#">Users <span class="fas fa-arrow-circle-right"></span></a>
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body bg-info">
+                    <h5 class="card-title"> {{ font_awesome.render_icon("fas fa-file fa-4x") }} </h5>
+                    <p class="card-text">No. of files: {{ files_count }}</p>
+                    <hr style="height: 1px; background: #484848;">
+                    {% if current_user.role == 'Admin' %}
+                      <a class="text-dark" href="{{ url_for('filez.files') }}">  Files <span class="fas fa-arrow-circle-right"></span></a>
+                    {% else %}
+                      <a class="text-secondary" href="#">  Files <span class="fas fa-arrow-circle-right"></span></a>
+                    {% endif %}
+                </div>
+              </div>
+            </div>
         </div>
 
 
+        <br>
+
+
+        <div class="row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body bg-success">
+                    <h5 class="card-title"> <i class="fa-solid fa-file-invoice-dollar fa-4x"></i> </h5>
+                    <p class="card-text">My Budgets: {{ budget_count }} </p>
+                    <hr style="height: 1px; background: #484848;">
+                    <a class="text-dark" href="{{ url_for('budgetz.budgets') }}"> Budgets <span class="fas fa-arrow-circle-right"></span></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body bg-danger">
+                    <h5 class="card-title"> <i class="fa-solid fa-money-bill-transfer fa-4x"></i> </h5>
+                    <p class="card-text"> {{ trans_title }}: {{ transactions }} </p>
+                    <hr style="height: 1px; background: #484848;">
+                    <a class="text-dark" href="{{ url_for('transactionz.transactions') }}"> Transactions <span class="fas fa-arrow-circle-right"></span></a>
+                </div>
+              </div>
+            </div>
+        </div>
 
 
 
