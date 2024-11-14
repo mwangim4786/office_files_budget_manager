@@ -95,8 +95,8 @@ def payment_request():
             "AccountReference": "353353",
             "Requester": "254700000000",
             "Remarks": "OK",
-            "QueueTimeOutURL": "https://72fc-2c0f-fe38-2403-45b0-68c9-6249-aa33-9b1f.ngrok-free.app/callback",
-            "ResultURL": "https://72fc-2c0f-fe38-2403-45b0-68c9-6249-aa33-9b1f.ngrok-free.app/callback"
+            "QueueTimeOutURL": "https://3916-2c0f-fe38-2014-b463-d55f-ccdd-c50a-6b18.ngrok-free.app/callback",
+            "ResultURL": "https://3916-2c0f-fe38-2014-b463-d55f-ccdd-c50a-6b18.ngrok-free.app/callback"
         }
 
         try:
